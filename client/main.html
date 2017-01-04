@@ -3,20 +3,19 @@
 </head>
 
 <body>
-  <h1>Where are you travel ?!</h1>
+  <h1>Où avez-vous déjà voyagé ?</h1>
 
   {{>add}}
   {{>display}}
 
 </body>
 <template name="display">
-<h3>Liste des pays</h3>
+<h3>Liste de mes pays :</h3>
     <ul>
-        {{#each country}}
-        <li>{{name}}
-            <button class="delete">x</button>
-            <button class="update">update</button><br><br>
-        </li>
+      {{#each country}}
+        <input type="text" name="newpays" value="{{name}}">  
+          <button class="delete">x</button>
+          <button class="update">update</button><br><br>
         {{/each}}
     </ul>
 </template>
@@ -26,13 +25,3 @@
   <button>Add</button>
 </template>
 
-
-<!-- <template name="remove">
-  <input type="text" placeholder="name">
-  <button>Add</button>
-</template>
-
-<template name="update">
-  <input type="text" placeholder="name">
-  <button>Add</button>
-</template> -->

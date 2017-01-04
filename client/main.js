@@ -35,8 +35,8 @@ Template.display.events({
 
 Template.display.events({
     'click .update' : function(event, template){
-		event.preventDefault();
+		var $valueField = template.find("input[name='newpays']").value;
 
-       country.remove(this._id);
+		country.update({_id : this._id},{$set:{name : $valueField}});
 	}
 });
