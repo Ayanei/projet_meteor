@@ -11,17 +11,21 @@
 </body>
 <template name="display">
 <h3>Liste de mes pays :</h3>
-    <ul>
+    
       {{#each country}}
-        <input type="text" name="newpays" value="{{name}}">  
+        <div class="listPays">
+        <input type="text" data-name="{{name}}" name="newpays" class="valuePays" value="{{name}}">  
           <button class="delete">x</button>
           <button class="update">modifier</button><br><br>
+        </div>
         {{/each}}
-    </ul>
+
+    
 </template>
 
 <template name="add">
 <input type="text" placeholder="Nom du pays" name="pays">
-  <button>Ajouter</button>
+  <button class="add">Ajouter</button>
 </template>
+
 

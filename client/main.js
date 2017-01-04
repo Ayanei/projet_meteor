@@ -14,12 +14,13 @@ Template.display.helpers(
 });
 
 Template.add.events({
-    'click button' : function(event, template){
+    'click .add' : function(event, template){
 		event.preventDefault();
 
 		var $pays = template.find("input[name='pays']").value;
 
-       country.insert({name: $pays});
+       	country.insert({name: $pays});
+       	return $pays;
 
 	}
 });
@@ -33,11 +34,24 @@ Template.display.events({
 	}
 });
 
+
+
 Template.display.events({
     'click .update' : function(event, template){
-		var $valueField = template.find("input[name='newpays']").value;
+    	event.preventDefault();
 
-		country.update({_id : this._id},{$set:{name : $valueField}});
-		alert("Vous avez bien actualisé le pays "+$valueField);
+    	alert($(event.target).closest('input').data('name'));
+		var $valueField = template.find(".listPays input[name='newpays']").value;
+		console.log($valueField);
+
+		console.log("You Select Client Row " + this.display);
+
+
+		//alert($(this).next('input').attr('class'));
+    	
+
+
+		// country.update({_id : this._id},{$set:{name : $valueField}});
+		// alert("Vous avez bien actualisé le pays "+$valueField);
 	}
 });
