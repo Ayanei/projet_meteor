@@ -3,7 +3,40 @@ import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
 
-Template.add.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
+country = new Mongo.Collection('country');
+
+Template.display.helpers(
+{
+	country:function()
+	{
+		return country.find();
+	}
+});
+
+Template.add.events({
+    'click button' : function(event, template){
+		event.preventDefault();
+
+		var $pays = template.find("input[name='pays']").value;
+
+       country.insert({name: $pays});
+
+	}
+});
+
+Template.display.events({
+    'click .delete' : function(event, template){
+		event.preventDefault();
+
+       country.remove(this._id);
+
+	}
+});
+
+Template.display.events({
+    'click .update' : function(event, template){
+		event.preventDefault();
+
+       country.remove(this._id);
+	}
 });

@@ -3,18 +3,29 @@
 </head>
 
 <body>
-  <h1>Welcome to Movies !</h1>
+  <h1>Where are you travel ?!</h1>
 
-  {{> add}}
-  {{> remove}}
-  {{> update}}
+  {{>add}}
+  {{>display}}
 
 </body>
+<template name="display">
+<h3>Liste des pays</h3>
+    <ul>
+        {{#each country}}
+        <li>{{name}}
+            <button class="delete">x</button>
+            <button class="update">update</button>
+        </li>
+        {{/each}}
+    </ul>
+</template>
 
 <template name="add">
-  <input type="text" placeholder="name">
+<input type="text" placeholder="name" name="pays">
   <button>Add</button>
 </template>
+
 
 <!-- <template name="remove">
   <input type="text" placeholder="name">
