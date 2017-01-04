@@ -38,5 +38,6 @@ Template.display.events({
 		var $valueField = template.find("input[name='newpays']").value;
 
 		country.update({_id : this._id},{$set:{name : $valueField}});
+		alert("Vous avez bien actualisé le pays "+$valueField);
 	}
 });
