@@ -4,3 +4,25 @@ h1
 	color: #4682B4;
 }
 
+.delete {
+		padding:4px 0 4px 0;
+	font:Bold 13px Arial;
+	background:#d34836;
+	color:#fff;
+	width:25px;
+	border-radius:2px;
+	border:none;
+	cursor:pointer;
+}
+
+.update
+{
+	padding:4px 0 4px 0;
+	font:bold 13px Arial;
+	background:#478bf9;
+	color:#fff;
+	border-radius:6px;
+	width:100px;
+	border:none;
+	cursor:pointer;
+}
